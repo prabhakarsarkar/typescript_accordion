@@ -1,9 +1,13 @@
 import { log } from "console";
 import React from "react";
 
-const SimpleTable = (props: any) => {
+interface Props {
+  data?: any,
+  children?: JSX.Element
+}
+
+const SimpleTable = (props: Props) => {
   const data = props?.data || [];
-console.log(props.data,'sadfasd')
   return (
     <div className=" rounded p-4" style={{ backgroundColor: "#e6e6e67d" }}>
       <div>
@@ -33,14 +37,20 @@ console.log(props.data,'sadfasd')
           <tbody>
             {data &&
               data.length > 0 &&
-              data.map((item:any, index:number) => (
+              data.map((item: any, index: number) => (
                 <>
                   <br />
                   <tr className="border rounded  ">
-                    <td className="t-head-data">{item?.year ||"N/A"}</td>
-                    <td className="t-head-data">{item?.ReservationId ||"N/A"}</td>
-                    <td className="t-head-data">{item?.pricePerUnit ||"N/A"}</td>
-                    <td className="t-head-data">{item?.balanceAvailable ||"N/A"}</td>
+                    <td className="t-head-data">{item?.year || "N/A"}</td>
+                    <td className="t-head-data">
+                      {item?.ReservationId || "N/A"}
+                    </td>
+                    <td className="t-head-data">
+                      {item?.pricePerUnit || "N/A"}
+                    </td>
+                    <td className="t-head-data">
+                      {item?.balanceAvailable || "N/A"}
+                    </td>
                     <td className="t-head-data">
                       <div className="d-flex justify-content-between align-items-center my-1">
                         <input

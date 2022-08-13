@@ -1,11 +1,9 @@
 import * as React from "react";
 import "./App.css";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MianHeader from "./components/MianHeader";
+
 import SimpleAccordions from "./components/SimpleAccordion";
 import AddAccordion from "./components/AddAccordion";
 import { useDispatch, useSelector } from "react-redux";
-import { addData } from "./redux/actions/data.action";
 import { adding, clearPayload } from "./redux/reducers/data.reducer";
 
 // const data = [
@@ -56,13 +54,9 @@ function App() {
   const [add, setAdd] = React.useState<boolean | false>(false);
   const data = useSelector((state: any) => state?.addDataReducer);
   const payload = useSelector((state: any) => state?.partialData);
-  console.log(data, "iiiiiiiiiiiiiii");
-
-
   const submitAdd = () => {
     dispatch(adding(payload));
-    
-    // dispatch(clearPayload());
+    dispatch(clearPayload());
   };
 
   return (

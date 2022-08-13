@@ -10,7 +10,8 @@ import MianHeader from "./MianHeader";
 import { useEffect } from "react";
 
 interface Props {
-  data: any;
+  data?: any,
+  children?: JSX.Element
 }
 
 export default function SimpleAccordions(props: Props) {

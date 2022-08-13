@@ -7,6 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MianHeader from "./MianHeader";
 import SimpleTable from "./SimpleTable";
 
+
 export default function AddAccordion() {
   const [expanded, setExpanded] = React.useState<string | false>("panel1");
 

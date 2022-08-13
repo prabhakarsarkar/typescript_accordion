@@ -21,7 +21,12 @@ const projectList = [
   },
 ];
 
-function MianHeader(props: any) {
+interface Props {
+  type?: string,
+  data?:any
+}
+
+function MianHeader(props: Props) {
   const dispatch = useDispatch();
   const type = props?.type || "";
   const data = props?.data || [];

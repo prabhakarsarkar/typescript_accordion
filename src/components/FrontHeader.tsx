@@ -4,15 +4,14 @@ interface Props {
   data: any;
 }
 
-const FrontHeader = (props: any) => {
+const FrontHeader = (props:Props) => {
   const item = props.data;
   return (
     <div className="px-3 py-2 col-12 ">
       <div className="col-11 d-flex  justify-content-between ">
         <div>
           <span className="fs-5 fw-bolder">{item?.projectName}</span>
-          {/* <Chip label={item?.allocationPercentage||"N/A"} className="mx-3 px-2 py-0" color="success" /> */}
-          <span className="mx-3 rounded-pill bg-danger percentage-Icons px-3 py-1">
+          <span className="mx-3 rounded-pill percentage-Icons px-3 py-1 " style={{ backgroundColor: "#e6d494" }}>
             {item?.allocationPercentage?item?.allocationPercentage+"%": "N/A"}
           </span>
         </div>
